@@ -62,22 +62,9 @@ void BRTree::rotateLeft(Node *node)
     x->left = node;
     x->black = node->black;
     node->black = false;
-    /*Node *pivot = node->right;
-	pivot->parent = node->parent; 
-    
-    if (node->parent) 
-    {
-        if (node->parent->left == node) node->parent->left = pivot;
-        else node->parent->right = pivot;
-    }		
-    node->right = pivot->left;
-    
-    if (pivot->left) pivot->left->parent = node;
-    
-    node->parent = pivot;
-    pivot->left = node;*/
+
     if (node == root) {x->black = true; root = x; }
-    //root = pivot;
+
 }
 
 void BRTree::rotateRight(Node *node)
@@ -92,23 +79,9 @@ void BRTree::rotateRight(Node *node)
     x->right = node;
     x->black = node->black;
     node->black = false;
-    /*Node *pivot = node->left;
 
-    pivot->parent = node->parent; 
-    
-    if (node->parent) 
-    {
-        if (node->parent->left == node) node->parent->left = pivot;
-        else node->parent->right = pivot;
-    }		
-    node->left = pivot->right;
-    
-    if (pivot->right) pivot->right->parent = node;
-    
-    node->parent = pivot;
-    pivot->right = node;*/
     if (node == root) {x->black = true; root = x; }
-    //root = pivot;
+
 }
 
 void BRTree::changeColor(Node *node)
